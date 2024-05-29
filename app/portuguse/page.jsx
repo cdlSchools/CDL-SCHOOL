@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Select from 'react-select';
-import CountdownTimer from "../Components/Timer"
+import CountdownTimer from "../../Components/Timer"
 import Dropdown from 'react-bootstrap/Dropdown';
 const customStyles = {
   control: (provided) => ({
@@ -26,7 +26,7 @@ const customStyles = {
     display: 'none',
   }),
 };
-export default function Home() {
+export default function page() {
   const [state, setState] = useState('');
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
@@ -158,7 +158,7 @@ export default function Home() {
       alert('Form submitted successfully', { state, name, city, address, zip, phone, email })
     }
   };
-console.log(targetDate)
+
   return (
   <>
   <div className='desktopversion'>
@@ -175,22 +175,21 @@ console.log(targetDate)
         <Dropdown.Item href="#/action-3" className="dropdown-item-custom"> <img src='/images/Brazil.png' className='falgsimage'></img> Português</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-  
 </div>
 <div className="registrationarea">
   <div className="logoimagecontainer">
   <img src="/images/Logo.png" alt="logo"></img>
 
   </div>
-  <div className="textheading">To participate, fill out the form</div>
-  <div className="descriptiontext">After completing it, you will automatically be entered into the drawing. Good luck!</div>
+  <div className="textheading">Preencha o formulário para</div>
+  <div className="descriptiontext">concorrer ao sorteio</div>
   <div className="coverofallinput">
     <div className="oneinput"           style={{ borderColor: errors.name ? 'red' : '' }}
 >
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="23" viewBox="0 0 18 23" fill="none">
   <path d="M8.91631 11.8017C12.0027 11.8017 14.4718 9.30226 14.4718 6.24411C14.4718 3.18597 11.9733 0.686523 8.91631 0.686523C5.85933 0.686523 3.36084 3.18597 3.36084 6.24411C3.36084 9.33166 5.85933 11.8017 8.91631 11.8017ZM8.91631 2.50965C10.9739 2.50965 12.62 4.18575 12.62 6.21471C12.62 8.24367 10.9445 9.91977 8.91631 9.91977C6.88812 9.91977 5.21266 8.24367 5.21266 6.21471C5.21266 4.18575 6.88812 2.50965 8.91631 2.50965Z" fill="#5F616E"/>
   <path d="M8.9165 13.6543C4.30164 13.6543 0.568604 17.3888 0.568604 22.0054C0.568604 22.5053 0.980119 22.9464 1.50921 22.9464C2.0383 22.9464 2.44982 22.5347 2.44982 22.0054C2.44982 18.4179 5.35983 15.5068 8.94589 15.5068C12.532 15.5068 15.442 18.4179 15.442 22.0054C15.442 22.5053 15.8535 22.9464 16.3826 22.9464C16.9117 22.9464 17.3232 22.5347 17.3232 22.0054C17.3232 17.3888 13.5901 13.6543 8.97529 13.6543H8.9165Z" fill="#5F616E"/>
-</svg> Name: <input onChange={(e)=>{setName(e.target.value)}} value={name} className="inputfeilds"></input>
+</svg>Nome: <input onChange={(e)=>{setName(e.target.value)}} value={name} className="inputfeilds"></input>
     </div>
     {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
 
@@ -198,14 +197,14 @@ console.log(targetDate)
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewBox="0 0 18 21" fill="none">
   <path d="M8.9165 0.967285C4.30164 0.967285 0.568604 4.70175 0.568604 9.31837C0.568604 13.6998 7.32922 19.5514 8.12286 20.1983L8.9165 20.8746L9.71014 20.1983C10.4744 19.5514 17.2644 13.6998 17.2644 9.31837C17.2644 4.70175 13.5314 0.967285 8.9165 0.967285ZM8.9165 17.6106C6.38862 15.2876 3.06709 11.5238 3.06709 9.34778C3.06709 6.11321 5.68316 3.49614 8.9165 3.49614C12.1498 3.49614 14.7659 6.11321 14.7659 9.34778C14.7659 11.5532 11.4444 15.317 8.9165 17.6401V17.6106Z" fill="#5F616E"/>
   <path d="M8.91646 11.7591C10.2963 11.7591 11.415 10.6401 11.415 9.25969C11.415 7.87929 10.2963 6.76025 8.91646 6.76025C7.53658 6.76025 6.41797 7.87929 6.41797 9.25969C6.41797 10.6401 7.53658 11.7591 8.91646 11.7591Z" fill="#5F616E"/>
-</svg> Address: <input className="inputfeilds" onChange={(e)=>{setAddress(e.target.value)}} value={address}></input>
+</svg>Endereco: <input className="inputfeilds" onChange={(e)=>{setAddress(e.target.value)}} value={address}></input>
     </div>
     {errors.address && <p style={{ color: 'red' }}>{errors.address}</p>}
 
     <div className="oneinput" style={{ borderColor: errors.city ? 'red' : '' }}>
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
   <path d="M9.6971 0.470539C9.168 5.48288e-05 8.37437 5.48288e-05 7.84528 0.470539L0.437988 7.14552V14.3792C0.437988 15.6142 1.43738 16.614 2.67193 16.614H14.9292C16.1638 16.614 17.1632 15.6142 17.1632 14.3792V7.14552L9.75589 0.470539H9.6971ZM10.8729 15.2026H6.69891V11.7033C6.69891 10.5565 7.63952 9.61557 8.78588 9.61557C9.93225 9.61557 10.8729 10.5565 10.8729 11.7033V15.2026ZM15.7229 14.3792C15.7229 14.8497 15.3407 15.2026 14.8998 15.2026H12.2544V11.7033C12.2544 9.792 10.6965 8.23352 8.78588 8.23352C6.87527 8.23352 5.31739 9.792 5.31739 11.7033V15.2026H2.67193C2.20163 15.2026 1.8489 14.8203 1.8489 14.3792V7.76305L8.81528 1.49972L15.7817 7.76305V14.3792H15.7229Z" fill="#5F616E"/>
-</svg> City: <input className="inputfeilds" onChange={(e)=>{setCity(e.target.value)}} value={city}></input>
+</svg>Ciudade: <input className="inputfeilds" onChange={(e)=>{setCity(e.target.value)}} value={city}></input>
     </div>
     {errors.city && <p style={{ color: 'red' }}>{errors.city}</p>}
 
@@ -237,7 +236,7 @@ console.log(targetDate)
     options={stateOptions}
     value={stateOptions.find((option) => option.value === state)} // Ensure correct display of selected state
     onChange={handleStateChange}
-    placeholder="State"
+    placeholder="Estado"
     styles={customStyles}
   />
     </div>
@@ -247,21 +246,21 @@ console.log(targetDate)
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="23" viewBox="0 0 18 23" fill="none">
   <path d="M8.91631 11.8017C12.0027 11.8017 14.4718 9.30226 14.4718 6.24411C14.4718 3.18597 11.9733 0.686523 8.91631 0.686523C5.85933 0.686523 3.36084 3.18597 3.36084 6.24411C3.36084 9.33166 5.85933 11.8017 8.91631 11.8017ZM8.91631 2.50965C10.9739 2.50965 12.62 4.18575 12.62 6.21471C12.62 8.24367 10.9445 9.91977 8.91631 9.91977C6.88812 9.91977 5.21266 8.24367 5.21266 6.21471C5.21266 4.18575 6.88812 2.50965 8.91631 2.50965Z" fill="#5F616E"/>
   <path d="M8.9165 13.6543C4.30164 13.6543 0.568604 17.3888 0.568604 22.0054C0.568604 22.5053 0.980119 22.9464 1.50921 22.9464C2.0383 22.9464 2.44982 22.5347 2.44982 22.0054C2.44982 18.4179 5.35983 15.5068 8.94589 15.5068C12.532 15.5068 15.442 18.4179 15.442 22.0054C15.442 22.5053 15.8535 22.9464 16.3826 22.9464C16.9117 22.9464 17.3232 22.5347 17.3232 22.0054C17.3232 17.3888 13.5901 13.6543 8.97529 13.6543H8.9165Z" fill="#5F616E"/>
-</svg> Zipcode: <input className="inputfeilds" onChange={(e)=>{setZip(e.target.value)}} value={zip}></input>
+</svg>Zipcode: <input className="inputfeilds" onChange={(e)=>{setZip(e.target.value)}} value={zip}></input>
     </div>
     {errors.zip && <p style={{ color: 'red' }}>{errors.zip}</p>}
 
     <div className="oneinput" style={{ borderColor: errors.phone ? 'red' : '' }}>
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
   <path d="M18.3691 8.77913C17.9576 8.77913 17.6048 8.42629 17.6048 8.01461C17.6048 4.63301 14.8712 1.89833 11.4615 1.86893C11.05 1.86893 10.6972 1.51604 10.6972 1.10436C10.6972 0.69269 11.05 0.339844 11.4615 0.339844C15.6942 0.339844 19.1333 3.78026 19.1333 8.01461C19.1333 8.42629 18.7806 8.77913 18.3691 8.77913ZM16.0763 8.01461C16.0763 5.48576 14.0188 3.4274 11.4909 3.4274C11.0794 3.4274 10.7266 3.78025 10.7266 4.19192C10.7266 4.6036 11.0794 4.95644 11.4909 4.95644C13.1957 4.95644 14.5479 6.33851 14.5479 8.01461C14.5479 8.42629 14.9006 8.77913 15.3121 8.77913C15.7236 8.77913 16.0763 8.42629 16.0763 8.01461ZM17.7518 17.3361L18.4573 16.5421C19.3685 15.6011 19.3685 14.1015 18.4573 13.1899L16.576 11.7491C15.6648 10.8669 14.2245 10.8669 13.2839 11.7491L11.8142 12.9841C9.4039 11.9843 7.49329 10.073 6.4939 7.66176L7.72845 6.1915C8.61027 5.27994 8.61027 3.83905 7.72845 2.89808C7.72845 2.89808 6.31753 1.04559 6.28814 1.04559C5.37693 0.134023 3.90723 0.104589 2.96662 1.01615L2.0848 1.78072C-3.11794 7.80879 8.08117 18.9533 14.3421 18.7475C15.606 18.7475 16.8406 18.2476 17.7224 17.3361H17.7518Z" fill="#5F616E"/>
-</svg> Phone: <input className="inputfeilds" onChange={(e)=>{setPhone(e.target.value)}} value={phone}></input>
+</svg>Celular: <input className="inputfeilds" onChange={(e)=>{setPhone(e.target.value)}} value={phone}></input>
     </div>
     {errors.phone && <p style={{ color: 'red' }}>{errors.phone}</p>}
 
     <div className="oneinput" style={{ borderColor: errors.email ? 'red' : '' }}>
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
   <path d="M13.6197 0.104492H4.56634C2.44997 0.104492 0.745117 1.81 0.745117 3.92718V11.5726C0.745117 13.6897 2.44997 15.3953 4.56634 15.3953H13.6197C15.7361 15.3953 17.4409 13.6897 17.4409 11.5726V3.92718C17.4409 1.81 15.7361 0.104492 13.6197 0.104492ZM13.6197 2.19228C14.0312 2.19228 14.4427 2.33929 14.7661 2.63334L10.2394 7.16178C9.59271 7.77929 8.59331 7.77929 7.94665 7.16178L3.41997 2.63334C3.7433 2.33929 4.12543 2.19228 4.56634 2.19228H13.6197ZM13.6197 13.3075H4.56634C3.59634 13.3075 2.83209 12.5429 2.83209 11.5726V4.98577L6.47695 8.63204C7.91725 10.0729 10.2688 10.0729 11.7091 8.63204L15.3539 4.98577V11.5726C15.3539 12.5429 14.5897 13.3075 13.6197 13.3075Z" fill="#5F616E"/>
-</svg> Email: <input className="inputfeilds" onChange={(e)=>{setEmail(e.target.value)}} value={email}></input>
+</svg>E-mail: <input className="inputfeilds" onChange={(e)=>{setEmail(e.target.value)}} value={email}></input>
     </div>
     {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
 
@@ -270,20 +269,20 @@ console.log(targetDate)
           {
             agree ? (<img src='/images/checked.png' className='boxcheck' onClick={()=>{setAgree(false)}} alt='box'></img>):(<img src='/images/box.png' onClick={()=>{setAgree(true)}} className='boxcheck' alt='box'></img>)
           }
-    &nbsp;&nbsp;&nbsp;I agree with the <span className='condtions'>Terms and Conditions.</span>
+    &nbsp;&nbsp;&nbsp;Estoy de acuerdo con los <span className='condtions'>Términos y Condiciones.</span>
     </div>
     {errors.agree && <p style={{ color: 'red' }}>{errors.agree}</p>}
 
     <div className='checkbox'>
     {
             confirm ? (<img src='/images/checked.png' onClick={()=>{setConfirm(false)}} className='boxcheck' alt='box'></img>):(<img src='/images/box.png' onClick={()=>{setConfirm(true)}} className='boxcheck' alt='box'></img>)
-          } &nbsp;&nbsp; I agree with the Terms and Conditions.
+          } &nbsp;&nbsp; Confirmo que resido legalmente en los Estados Unidos.
     </div>
     {errors.confirm && <p style={{ color: 'red' }}>{errors.confirm}</p>}
 
     </div>
   <div onClick={handleSubmit} className='registerbox'>
-    Register
+  Quero participar
   </div>
   <div className='socialicons'>
     <div className='insta'>
@@ -298,11 +297,11 @@ console.log(targetDate)
  <div className='forback' >
   <div className='forflex'>
   <div className='largeimage'>
-        <img src='/images/Seloingles.png' alt='largeima' />
+        <img src='/images/cdlpt.png' alt='largeima' />
         <CountdownTimer targetDate={targetDate} />
       </div>
       <div className='positioning'>
-      <div className='contenttitle'>Participate every month for a <span>100%</span>  FREE <span>CDL!</span>
+      <div className='contenttitle'> Concorra todo<span></span>mês a uma CDL  <span>totalmente grátis!</span>
       <svg className='marker' xmlns="http://www.w3.org/2000/svg" width="273" height="103" viewBox="0 0 273 103" fill="none">
   <path d="M250.192 101.614C231.495 55.9807 164.299 -26.0167 45.0869 11.063C-103.928 57.4127 174.432 128.295 271.469 26.0337" stroke="#FCAF3D" stroke-width="3"/>
 </svg>
